@@ -1,0 +1,235 @@
+@import 'animations';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #30292F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    height: 100vh;
+    width: 100vh;
+    max-width: 500px;
+    position: relative;
+}
+
+.intro, .list-div, .history{
+    background: #FFBA08;
+    position: relative;
+    // position: absolute;
+    // top: 0;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 5px solid #DF2935;
+    // border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+    overflow-y: hidden;
+}
+
+.fn-btns {
+    width: 100%;
+    background: #30292F;
+    padding: 15px 0;
+    position: relative;
+    // bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.fn-btn {
+    background: #048BA8;
+    color: #30292F;
+    padding: 10px;
+    
+    width: 70px;;
+    height: 70px;
+    margin: 0;
+    // border-radius: 1rem;
+    font-size: 1.5rem;
+    font-family: 'nunito', sans-serif;
+    font-weight: 200;
+    border: 5px solid #DF2935;
+    // box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+h1, h2 {
+    font-size: 2rem;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.2rem;
+    font-weight: 800;
+    word-spacing: 1.2rem;
+    text-align: center;
+    color: #30292F;
+    padding: 1rem;
+
+}
+
+.item, .list-item {
+    width: 90%;
+    margin: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    text-align: center;
+    color: #048BA8;
+}
+
+.in-basket {
+    order: 2;
+    text-decoration:line-through;
+}
+
+.cat-btns-top {
+    margin:0 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.wszystko-btn, .wszystko-list-btn {
+    font-family: 'kdam thmor pro', sans-serif; 
+    font-size: 2rem;
+    padding: 0.5rem;
+    width: 80%;
+    height: auto;
+    border: 3px solid #DF2935;
+    border-bottom: none;
+    border-radius: 0 0.6rem 0 0;
+    background: #048BA8;
+    color: #30292F;
+    cursor: pointer;
+}
+
+.cat-back {
+    font-size: 2rem;
+    padding: 0.5rem;
+    width: 20%;
+    border: 3px solid #DF2935;
+    border-bottom: none;
+    border-right: 1px;
+    border-radius: 0.6rem 0 0 0;
+    background: #048BA8;
+    color: #30292F;
+    cursor: pointer;
+}
+
+.categories-chooser, .categories-chooser-list {
+    position:absolute;
+    bottom: -303px;
+    background: #048BA8;
+    height: 300px;
+    width: 80%;
+    border: 3px solid #DF2935;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.search-field, .search-field-list {
+    position: absolute;
+    right: calc((25% - 70px)/2 + 70px);
+    bottom: 15px;
+    height: 70px;
+    width: 75%;
+    border:5px solid #DF2935;
+    border-right: none;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    // padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.circle {
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:130px;
+    width:200px;
+    background-color: #048BA8;
+    border:3px solid #DF2935;
+    transform: translateY(10px) rotate(3deg);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+    .hangers {
+        .small-crcle {
+            position: absolute;
+            border:2px solid #DF2935;
+            border-radius: 50% 50%;
+            height: 10px;
+            width: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 2px;
+            transform: rotate(-3deg) ;
+            
+            .line {
+                position: absolute;
+                height: 50px;
+                width: 4px;
+                background: #30292F;
+                z-index: 3;
+            }
+        }
+        .small-crcle1 {
+            top: 5px;
+            left: 5px;
+        }
+        .small-crcle2 {
+            top: 5px;
+            right: 5px;
+        }
+    }
+    h1 {
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+}
+
+    
+
+
+input {
+    text-align: center;
+}
+
+
+.underlined {
+    border-bottom: 2px solid linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 51%, rgba(255,255,255,1) 100%);
+}
+
+button {
+    cursor: pointer;
+}
+
+@import 'intro';
+
+@import 'addcustom';
+
+@import 'list';
+
+.hidden {
+    display: none !important;
+    pointer-events: none !important;
+}

@@ -1,0 +1,113 @@
+.add-new-container {
+    
+    opacity: 0.95;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 80%;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    background: #FFBA08;
+    border: 5px #DF2935 solid;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    .close {
+        position:absolute;
+        top: -10px;
+        right: -10px;
+        background: beige;
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        i {
+            font-size: 20px;;
+        }
+    }
+
+    .inputs {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem;
+        label {
+            text-align: center;
+            font-family: 'bebas neue', sans-serif;
+        }
+        input[type="text"] {
+            background: none;
+
+            border: none;
+            height: 100px;
+            width: 100%;
+            padding: 1rem 0.2rem;
+            font-family: 'kdam thmor pro', sans-serif;
+            color: #048BA8;
+            font-weight: 200;
+            font-size: 40px;
+        }
+
+        .nrinput {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .arrow-btns {
+                display: flex;
+                flex-direction: column;
+                border: 5px solid #DF2935;
+                button {
+                    height: 50px;
+                    width: 50px;
+                    background: #048BA8;
+                    border: none;
+                    i {
+                        font-size: 30px;
+                    }
+                }
+                .arrow-up {
+                    border-bottom:2px solid #DF2935;
+                }
+                .arrow-down{
+                    border-top: 2px solid #DF2935;
+                }
+            }
+        }
+        input[type="number"] {
+            background: none;
+            border: none;
+            height: 100px;
+            width:150px;
+            padding: 1rem 0.2rem;
+            font-family: 'kdam thmor pro', sans-serif;
+            color: #048BA8;
+            font-weight: 200;
+            font-size: 40px;
+        }
+
+        input[type="number"] {
+            -webkit-appearance: textfield;
+               -moz-appearance: textfield;
+                    appearance: textfield;
+          }
+          input[type=number]::-webkit-inner-spin-button, 
+          input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none;
+          }
+    }
+
+    .add {
+        border: none;
+        background: none;
+        height: 5rem;
+        width: 5rem;
+        // border-radius: 50%;
+        i {
+            font-size: 3rem;
+        }
+    }
+}
+

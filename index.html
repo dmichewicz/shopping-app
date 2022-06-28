@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kdam+Thmor+Pro&family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <script src="./node_modules/sortablejs/Sortable.min.js"></script>
+    <title>Shopping app</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="categories-from-data hidden">KATEGORIE</div>
+      <div class="current-categories hidden"><h1>KATEGORIE</h1></div>
+      <div class="list-div hidden">
+        <div class="circle">
+          <div class="hangers">
+            <div class="small-crcle small-crcle1">
+              <div class="line line1"></div>
+            </div>
+          </div>
+
+          <div class="hangers">
+            <div class="small-crcle small-crcle2">
+              <div class="line line1"></div>
+            </div>
+          </div>
+          <h1>ZAKUPKI<br />APP</h1>
+        </div>
+        <h1>lista zakupów</h1>
+        <div class="categories">
+          <button class="wszystko-list-btn">wszystko</button>
+          <div class="categories-chooser-list hidden categories-close">
+            <button class="wszystko-list category-btn">wszystko</button>
+          </div>
+        </div>
+        <ul id="list" class="StackedList StackedList--hasScroll"></ul>
+        <div class="fn-btns fn-btns-list">
+          <input
+            type="text"
+            name="search-field-list"
+            class="search-field-list hidden search-field-close"
+          />
+          <button class="back-list fn-btn">
+            <i class="fa fa-arrow-left"></i>
+          </button>
+          <button class="add-custom-item-list fn-btn">
+            <i class="fa fa-add"></i>
+          </button>
+          <button class="open-history-list fn-btn">
+            <i class="fa fa-history"></i>
+          </button>
+          <button class="search-list fn-btn">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="intro">
+        <div class="circle">
+          <div class="hangers">
+            <div class="small-crcle small-crcle1">
+              <div class="line line1"></div>
+            </div>
+          </div>
+
+          <div class="hangers">
+            <div class="small-crcle small-crcle2">
+              <div class="line line1"></div>
+            </div>
+          </div>
+          <h1>ZAKUPKI<br />APP</h1>
+        </div>
+
+        <h1>dodaj produkty</h1>
+
+        <!-- <div class="container1"> -->
+        <div class="categories">
+          <div class="cat-btns-top">
+            <button class="cat-back cat-back-intro">
+              <i class="fa fa-arrow-left"></i>
+            </button>
+            <button class="wszystko-btn">
+              kategorie <i class="fa fa-arrow-down"></i>
+            </button>
+          </div>
+          <div class="categories-chooser hidden categories-close">
+            <button class="wszystko category-btn">wszystko</button>
+          </div>
+        </div>
+        <!-- </div> -->
+        <div id="choose"></div>
+        <div class="fn-btns fn-btns-intro">
+          <input
+            type="text"
+            name="search-field"
+            class="search-field hidden search-field-close"
+          />
+          <button class="add-custom-item-intro fn-btn">
+            <i class="fa fa-add"></i>
+          </button>
+          <button class="show-list-intro fn-btn">
+            <i class="fa fa-list"></i>
+          </button>
+          <button class="open-history-intro fn-btn">
+            <i class="fa fa-history"></i>
+          </button>
+          <button class="search-intro fn-btn">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="add-new-container hidden">
+        <button class="close close-custom"><i class="fa fa-close"></i></button>
+        <h2>dodaj produkt</h2>
+        <div class="inputs">
+          <input type="text" name="product" class="product" />
+          <!-- <label for="product">produkt</label> -->
+
+          <input type="text" name="category" class="category" />
+          <!-- <label for="category">kategoria</label> -->
+
+          <div>
+            <div class="nrinput">
+              <input type="number" name="amount" class="amount" value="1" />
+              <div class="arrow-btns">
+                <button class="arrow-up"><i class="fa fa-arrow-up"></i></button
+                ><button class="arrow-down">
+                  <i class="fa fa-arrow-down"></i>
+                </button>
+              </div>
+            </div>
+            <!-- <label for="amount">ilosc</label> -->
+          </div>
+        </div>
+        <button class="add"><i class="fa fa-add"></i></button>
+      </div>
+    </div>
+  </body>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/intro.js"></script>
+  <script src="./js/addcustom.js"></script>
+  <script src="./js/list.js"></script>
+  <script src="./js/app.js"></script>
+</html>

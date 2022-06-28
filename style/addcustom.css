@@ -1,0 +1,149 @@
+.add-new-container {
+  opacity: 0.95;
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  width: 80%;
+  padding: 2rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #FFBA08;
+  border: 5px #DF2935 solid;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.add-new-container .close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: beige;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.add-new-container .close i {
+  font-size: 20px;
+}
+
+.add-new-container .inputs {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem;
+}
+
+.add-new-container .inputs label {
+  text-align: center;
+  font-family: 'bebas neue', sans-serif;
+}
+
+.add-new-container .inputs input[type="text"] {
+  background: none;
+  border: none;
+  height: 100px;
+  width: 100%;
+  padding: 1rem 0.2rem;
+  font-family: 'kdam thmor pro', sans-serif;
+  color: #048BA8;
+  font-weight: 200;
+  font-size: 40px;
+}
+
+.add-new-container .inputs .nrinput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.add-new-container .inputs .nrinput .arrow-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 5px solid #DF2935;
+}
+
+.add-new-container .inputs .nrinput .arrow-btns button {
+  height: 50px;
+  width: 50px;
+  background: #048BA8;
+  border: none;
+}
+
+.add-new-container .inputs .nrinput .arrow-btns button i {
+  font-size: 30px;
+}
+
+.add-new-container .inputs .nrinput .arrow-btns .arrow-up {
+  border-bottom: 2px solid #DF2935;
+}
+
+.add-new-container .inputs .nrinput .arrow-btns .arrow-down {
+  border-top: 2px solid #DF2935;
+}
+
+.add-new-container .inputs input[type="number"] {
+  background: none;
+  border: none;
+  height: 100px;
+  width: 150px;
+  padding: 1rem 0.2rem;
+  font-family: 'kdam thmor pro', sans-serif;
+  color: #048BA8;
+  font-weight: 200;
+  font-size: 40px;
+}
+
+.add-new-container .inputs input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.add-new-container .inputs input[type=number]::-webkit-inner-spin-button,
+.add-new-container .inputs input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.add-new-container .add {
+  border: none;
+  background: none;
+  height: 5rem;
+  width: 5rem;
+}
+
+.add-new-container .add i {
+  font-size: 3rem;
+}
+/*# sourceMappingURL=addcustom.css.map */
