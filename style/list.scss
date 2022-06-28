@@ -13,15 +13,17 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         overflow-y: scroll;
     }
     li {
-
+        width: 80%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
+        border-bottom: 1px solid #30292F;
+    
         // width: 90%;
         // border: none;
         // list-style: none;
@@ -32,21 +34,23 @@
         // text-transform: uppercase;
         // box-shadow: 2px 2px 5px black;
         .info-div {
-            height: 50px;
+            height: auto;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
             background: none;
             width: 70%;
             p {
-                padding: 1rem 0;
+                padding: 0.5rem 0.5rem 0 0.5rem;
                 font-family: 'kdam thmor pro', sans-serif;
+                text-align: left;
             }
         }
         .item-controls {
             display: flex;
             width: 30%;
             background: none;
+            border-left: 1px solid #30292F;
 
             button {
                 display: flex;

@@ -46,12 +46,20 @@
         </div>
         <h1>lista zakupów</h1>
         <div class="categories">
-          <button class="wszystko-list-btn">wszystko</button>
-          <div class="categories-chooser-list hidden categories-close">
-            <button class="wszystko-list category-btn">wszystko</button>
+          <div class="cat-btns-top">
+            <button class="cat-back cat-back-list">
+              <i class="fa fa-chevron-left"></i>
+            </button>
+            <button class="wszystko-list-btn">
+              kategorie <i class="fa fa-angle-down arrow-list"></i>
+            </button>
           </div>
+
+          <div class="categories-chooser-list hidden categories-close"></div>
         </div>
-        <ul id="list" class="StackedList StackedList--hasScroll"></ul>
+        <ul id="list" class="StackedList StackedList--hasScroll">
+          <p class="noitems">nic tu jeszcze nie ma <br> dodaj produkty to cos sie pojawi :)</p>
+        </ul>
         <div class="fn-btns fn-btns-list">
           <input
             type="text"
@@ -64,8 +72,8 @@
           <button class="add-custom-item-list fn-btn">
             <i class="fa fa-add"></i>
           </button>
-          <button class="open-history-list fn-btn">
-            <i class="fa fa-history"></i>
+          <button class="refresh fn-btn">
+            <i class="fa fa-refresh"></i>
           </button>
           <button class="search-list fn-btn">
             <i class="fa fa-search"></i>
@@ -95,15 +103,14 @@
         <div class="categories">
           <div class="cat-btns-top">
             <button class="cat-back cat-back-intro">
-              <i class="fa fa-arrow-left"></i>
+              <i class="fa fa-chevron-left"></i>
             </button>
             <button class="wszystko-btn">
-              kategorie <i class="fa fa-arrow-down"></i>
+              kategorie
+              <i class="fa fa-angle-down arrow-intro"></i>
             </button>
           </div>
-          <div class="categories-chooser hidden categories-close">
-            <button class="wszystko category-btn">wszystko</button>
-          </div>
+          <div class="categories-chooser hidden categories-close"></div>
         </div>
         <!-- </div> -->
         <div id="choose"></div>
@@ -113,14 +120,17 @@
             name="search-field"
             class="search-field hidden search-field-close"
           />
-          <button class="add-custom-item-intro fn-btn">
-            <i class="fa fa-add"></i>
-          </button>
+
           <button class="show-list-intro fn-btn">
             <i class="fa fa-list"></i>
           </button>
-          <button class="open-history-intro fn-btn">
-            <i class="fa fa-history"></i>
+
+          <button class="add-custom-item-intro fn-btn">
+            <i class="fa fa-add"></i>
+          </button>
+
+          <button class="refresh fn-btn">
+            <i class="fa fa-refresh"></i>
           </button>
           <button class="search-intro fn-btn">
             <i class="fa fa-search"></i>
@@ -140,18 +150,33 @@
 
           <div>
             <div class="nrinput">
+              <button class="arrow-down">
+                <i class="fa fa-minus"></i>
+              </button>
               <input type="number" name="amount" class="amount" value="1" />
-              <div class="arrow-btns">
-                <button class="arrow-up"><i class="fa fa-arrow-up"></i></button
-                ><button class="arrow-down">
-                  <i class="fa fa-arrow-down"></i>
-                </button>
-              </div>
+              <!-- <div class="arrow-btns"> -->
+                <button class="arrow-up"><i class="fa fa-plus"></i></button
+                  >
+                
+              <!-- </div> -->
             </div>
             <!-- <label for="amount">ilosc</label> -->
           </div>
         </div>
-        <button class="add"><i class="fa fa-add"></i></button>
+        <button class="add"><i class="fa fa-check"></i></button>
+      </div>
+
+      <div class="remove-check hidden">
+        <h2>na pewno chcesz usunac liste?</h2>
+        <div class="remove-check-btns">
+          <button class="no rmv-btn"><i class="fa fa-remove"></i></button>
+          <button class="yes rmv-btn"><i class="fa fa-check"></i></button>
+        </div>
+      </div>
+
+      <div class="remove-popup hidden">
+        <h2>lista zostala usunieta &#128077
+        </h2>
       </div>
     </div>
   </body>

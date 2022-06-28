@@ -1,13 +1,14 @@
 const categoriesBtns = document.querySelector(".categories");
 const categoriesChooseContainer = document.querySelector(".categories-chooser");
 const logos = document.querySelectorAll(".circle");
+const arrowIntro = document.querySelector(".arrow-intro");
 
 const choose = document.querySelector("#choose");
 let introBtns = [];
-let dataItems;
 let toBuy = document.querySelector("#list");
 let newProduct;
 let currentListData = [];
+let dataItems;
 let storageData;
 localStorage.getItem("shoppingList") === null
   ? (storageData = [])
@@ -15,17 +16,19 @@ localStorage.getItem("shoppingList") === null
 const showListBtn = document.querySelector(".show-list-intro");
 const searchBtn = document.querySelector(".search-intro");
 const searchField = document.querySelector(".search-field");
+const refreshBtns = document.querySelectorAll(".refresh");
 const listContainer = document.querySelector(".list-div");
 const introPage = document.querySelector(".intro");
 const addCustomItemBtn = document.querySelector(".add-custom-item-intro");
 const addCustomCard = document.querySelector(".add-new-container");
 let wszystkoBtn = document.querySelector(".wszystko-btn");
+const catBackBtnIntro = document.querySelector(".cat-back-intro");
 
 let currentCats = [];
 
 let listItemIndex = 0;
 
-Object.keys(data).forEach((category) => {
+Object.keys(data).forEach((category, index) => {
   btn = document.createElement("button");
   btn.classList.add(category, "category-btn");
   btn.innerText = category;
@@ -33,6 +36,8 @@ Object.keys(data).forEach((category) => {
   categoriesChooseContainer.appendChild(btn);
 
   introBtns.push(btn);
+
+  btn.addEventListener("click", () => openCategory(index, category));
 });
 introBtns.push(document.querySelector(".wszystko"));
 
@@ -85,6 +90,8 @@ class Product {
     );
     this.removeBtn.addEventListener("click", () => this.remove(this.item));
     listItemIndex++;
+
+    checkItems();
   }
 
   // addToBasket(x) {
@@ -97,27 +104,32 @@ class Product {
     currentListData = currentListData.filter((item) => item != this);
     localStorage.setItem("shoppingList", JSON.stringify(currentListData));
     x.remove();
+    checkItems();
   }
 }
-
 listItems();
 listCurrentList();
+
 const addFromDataBtns = document.querySelectorAll(".add-from-data-btn");
 
 function openCategory(index, text) {
-  categoriesChooseContainer.classList.add("hidden");
-  wszystkoBtn.innerText = text;
   dataItems = document.querySelectorAll(".item");
+  categoriesChooseContainer.classList.add("hidden");
+  categoriesChooseContainer.classList.add("categories-close");
+  categoriesChooseContainer.classList.remove("categories-open");
+  wszystkoBtn.innerText = `${text}`;
+  wszystkoBtn.appendChild(arrowIntro);
+  checkArrow(categoriesChooseContainer, arrowIntro);
 
-  if (text === "wszystko") {
-    dataItems.forEach((item) => item.classList.remove("hidden"));
-  } else {
-    dataItems.forEach((item) => {
-      item.classList.contains(index)
-        ? item.classList.remove("hidden")
-        : item.classList.add("hidden");
-    });
-  }
+  // if (text === "wszystko") {
+  //   dataItems.forEach((item) => item.classList.remove("hidden"));
+  // } else {
+  dataItems.forEach((item) => {
+    item.classList.contains(index)
+      ? item.classList.remove("hidden")
+      : item.classList.add("hidden");
+  });
+  // }
 }
 
 function listItems() {
@@ -143,6 +155,24 @@ function listCurrentList() {
 function addProduct(itemName, itemCategory, itemAmount) {
   newProduct = new Product(itemName, itemCategory, itemAmount);
   newProduct.appendToList();
+
+  // if (searchField.classList.contains("search-field-open")) {
+  //   searchField.classList.remove("search-field-open");
+  //   searchField.classList.add("search-field-close");
+  //   searchField.addEventListener("animationend", () =>
+  //     searchField.classList.add("hidden")
+  //   );
+  // }
+
+  // if (searchFieldList.classList.contains("search-field-open")) {
+  //   searchFieldList.classList.remove("search-field-open");
+  //   searchFieldList.classList.add("search-field-close");
+  //   searchField.List.addEventListener("animationend", () =>
+  //     searchFieldList.classList.add("hidden")
+  //   );
+  // }
+  searchField.value = "";
+  searchFieldList.value = "";
 }
 
 function openAddCustom(product, category) {
@@ -152,7 +182,7 @@ function openAddCustom(product, category) {
   amountInput.value = 1;
 }
 
-function categoriesChooser(chooser) {
+function categoriesChooser(chooser, arrow) {
   // addFromDataBtns.forEach((btn) => btn.classList.add("hidden"));
 
   if (chooser.classList.contains("categories-close")) {
@@ -169,6 +199,8 @@ function categoriesChooser(chooser) {
       chooser.classList.add("hidden")
     );
   }
+
+  checkArrow(chooser, arrow);
 }
 
 function showSearchField(fieldName) {
@@ -187,24 +219,35 @@ function showSearchField(fieldName) {
   // searchField.style.animation = "searchOpener 1s ease";
 }
 
-function searchItem(input, items, txtItems, catBtn) {
-  console.log("umpa");
+function searchItem(input, items, txtItems, catBtn, arrow) {
   dataItems = document.querySelectorAll(items);
   dataTxtItems = document.querySelectorAll(txtItems);
   dataItems.forEach((item, index) => {
     input === ""
-      ? (catBtn.innerText = "wszystko")
-      : (catBtn.innerText = `zawierajace "${input}"`);
-
+      ? (catBtn.innerText = "kategorie")
+      : (catBtn.innerHTML = `zawierajace <br> "${input}"`);
+    catBtn.appendChild(arrow);
+    checkArrow(categoriesChooseContainer, arrow);
     dataTxtItems[index].innerText.includes(input)
       ? item.classList.remove("hidden")
       : item.classList.add("hidden");
   });
 }
 
+function checkArrow(chooser, arrow) {
+  if (chooser.classList.contains("categories-close")) {
+    arrow.classList.remove("fa-angle-up");
+    arrow.classList.add("fa-angle-down");
+  } else {
+    arrow.classList.remove("fa-angle-up");
+    arrow.classList.add("fa-angle-up");
+  }
+}
+
 function showList() {
   listContainer.classList.remove("hidden");
   introPage.classList.add("hidden");
+  dataItems = document.querySelectorAll(".list-item");
 
   currentListData.forEach((item, index) => {
     !currentCats.includes(item.category)
@@ -236,6 +279,29 @@ function createListBtn(cat) {
   btn.innerText = cat;
   listCategoriesContainer.appendChild(btn);
   btn.addEventListener("click", () => openListCategory(cat));
+
+  catBackBtnList.addEventListener("click", () => {
+    wszystkoListBtn.innerText = "kategorie";
+    wszystkoListBtn.appendChild(arrowList);
+
+    dataItems.forEach((item) => item.classList.remove("hidden"));
+    if (listCategoriesContainer.classList.contains("categories-open")) {
+      categoriesChooser(listCategoriesContainer, arrowList);
+    }
+    if (searchFieldList.classList.contains("search-field-open")) {
+      searchFieldList.classList.remove("search-field-open");
+      searchFieldList.classList.add("search-field-close");
+      searchFieldList.addEventListener("animationend", () =>
+        searchFieldList.classList.add("hidden")
+      );
+    }
+  });
+}
+
+function checkItems() {
+  currentListData.length === 0
+    ? document.querySelector(".noitems").classList.remove("hidden")
+    : document.querySelector(".noitems").classList.add("hidden");
 }
 
 function bounceLogo(logo) {
@@ -249,7 +315,7 @@ function bounceLogo(logo) {
 //event listeners
 
 wszystkoBtn.addEventListener("click", () =>
-  categoriesChooser(categoriesChooseContainer)
+  categoriesChooser(categoriesChooseContainer, arrowIntro)
 );
 
 // introBtns.forEach((btn, index) => {
@@ -257,7 +323,6 @@ wszystkoBtn.addEventListener("click", () =>
 // });
 
 addFromDataBtns.forEach((btn, index) => {
-  console.log("ppppp");
   btn.addEventListener("click", (e) => {
     prod = e.target.innerText;
     Object.keys(data).forEach((category, index) => {
@@ -275,7 +340,7 @@ showListBtn.addEventListener("click", showList);
 searchBtn.addEventListener("click", () => showSearchField(searchField));
 
 searchField.addEventListener("input", () =>
-  searchItem(searchField.value, ".item", ".item", wszystkoBtn)
+  searchItem(searchField.value, ".item", ".item", wszystkoBtn, arrowIntro)
 );
 
 logos.forEach((logo) => {
@@ -283,8 +348,26 @@ logos.forEach((logo) => {
   logo.addEventListener("mouseenter", () => bounceLogo(logo));
 });
 
-introBtns.forEach((btn, index) => {
-  // btn.classList.remove("hidden");
+// introBtns.forEach((btn, index) => {
+//   // btn.classList.remove("hidden");
 
-  btn.addEventListener("click", () => openCategory(index, btn.innerText));
+// });
+
+catBackBtnIntro.addEventListener("click", () => {
+  if (searchField.classList.contains("search-field-open")) {
+    searchField.classList.remove("search-field-open");
+    searchField.classList.add("search-field-close");
+    searchField.addEventListener("animationend", () =>
+      searchField.classList.add("hidden")
+    );
+  }
+
+  dataItems.forEach((item) => item.classList.remove("hidden"));
+  wszystkoBtn.innerText = `kategorie`;
+  wszystkoBtn.appendChild(arrowIntro);
+  checkArrow(categoriesChooseContainer, arrowIntro);
+
+  categoriesChooseContainer.classList.contains("categories-open")
+    ? categoriesChooser(categoriesChooseContainer, arrowIntro)
+    : null;
 });

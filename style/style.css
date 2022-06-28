@@ -62,8 +62,8 @@
     bottom: -3px;
   }
   to {
-    height: 300px;
-    bottom: -303px;
+    height: 50vh;
+    bottom: calc(-50vh - 3px);
   }
 }
 
@@ -73,15 +73,15 @@
     bottom: -3px;
   }
   to {
-    height: 300px;
-    bottom: -303px;
+    height: 50vh;
+    bottom: calc(-50vh - 3px);
   }
 }
 
 @-webkit-keyframes categoriesCloser {
   from {
-    height: 300px;
-    bottom: -303px;
+    height: 50vh;
+    bottom: calc(-50vh - 3px);
     border-bottom: 5px;
   }
   to {
@@ -93,8 +93,8 @@
 
 @keyframes categoriesCloser {
   from {
-    height: 300px;
-    bottom: -303px;
+    height: 50vh;
+    bottom: calc(-50vh - 3px);
     border-bottom: 5px;
   }
   to {
@@ -216,7 +216,7 @@ h1, h2 {
   padding: 1rem;
 }
 
-.item, .list-item {
+.item, .list-item, .noitems {
   width: 90%;
   margin: 1rem;
   background: none;
@@ -235,8 +235,7 @@ h1, h2 {
 }
 
 .cat-btns-top {
-  margin: 0 0.5rem;
-  width: 100%;
+  width: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -248,8 +247,8 @@ h1, h2 {
 .wszystko-btn, .wszystko-list-btn {
   font-family: 'kdam thmor pro', sans-serif;
   font-size: 2rem;
-  padding: 0.5rem;
-  width: 80%;
+  padding: 0.5rem 2rem;
+  width: 100%;
   height: auto;
   border: 3px solid #DF2935;
   border-bottom: none;
@@ -257,6 +256,17 @@ h1, h2 {
   background: #048BA8;
   color: #30292F;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .cat-back {
@@ -274,10 +284,10 @@ h1, h2 {
 
 .categories-chooser, .categories-chooser-list {
   position: absolute;
-  bottom: -303px;
+  bottom: calc(-50vh - 3px);
   background: #048BA8;
-  height: 300px;
-  width: 80%;
+  height: 50vh;
+  width: 95%;
   border: 3px solid #DF2935;
   border-top: none;
   display: -webkit-box;
@@ -380,6 +390,29 @@ button {
   cursor: pointer;
 }
 
+.remove-check-btns {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.remove-check-btns .rmv-btn {
+  height: 50px;
+  width: 50px;
+  background: #048BA8;
+  border: 2px solid #DF2935;
+}
+
+.remove-check-btns .rmv-btn i {
+  font-size: 30px;
+}
+
 .container1 {
   position: relative;
   width: 100%;
@@ -424,10 +457,11 @@ button {
   color: #30292F;
 }
 
-.add-new-container {
+.add-new-container, .remove-check, .remove-popup {
   opacity: 0.95;
+  height: 60%;
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 10%;
   width: 80%;
   padding: 2rem 1rem;
@@ -450,7 +484,7 @@ button {
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-.add-new-container .close {
+.add-new-container .close, .remove-check .close, .remove-popup .close {
   position: absolute;
   top: -10px;
   right: -10px;
@@ -461,11 +495,11 @@ button {
   height: 30px;
 }
 
-.add-new-container .close i {
+.add-new-container .close i, .remove-check .close i, .remove-popup .close i {
   font-size: 20px;
 }
 
-.add-new-container .inputs {
+.add-new-container .inputs, .remove-check .inputs, .remove-popup .inputs {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -480,24 +514,25 @@ button {
   margin: 1rem;
 }
 
-.add-new-container .inputs label {
+.add-new-container .inputs label, .remove-check .inputs label, .remove-popup .inputs label {
   text-align: center;
   font-family: 'bebas neue', sans-serif;
 }
 
-.add-new-container .inputs input[type="text"] {
+.add-new-container .inputs input[type="text"], .remove-check .inputs input[type="text"], .remove-popup .inputs input[type="text"] {
   background: none;
-  border: none;
-  height: 100px;
+  border: 2px solid #DF2935;
+  height: 70px;
   width: 100%;
-  padding: 1rem 0.2rem;
+  padding: 0.5rem 0.2rem;
+  margin: 0.25rem 0;
   font-family: 'kdam thmor pro', sans-serif;
   color: #048BA8;
   font-weight: 200;
   font-size: 40px;
 }
 
-.add-new-container .inputs .nrinput {
+.add-new-container .inputs .nrinput, .remove-check .inputs .nrinput, .remove-popup .inputs .nrinput {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -507,43 +542,33 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
-.add-new-container .inputs .nrinput .arrow-btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  border: 5px solid #DF2935;
-}
-
-.add-new-container .inputs .nrinput .arrow-btns button {
-  height: 50px;
-  width: 50px;
+.add-new-container .inputs .nrinput button, .remove-check .inputs .nrinput button, .remove-popup .inputs .nrinput button {
+  height: 70px;
+  width: 70px;
   background: #048BA8;
-  border: none;
+  border: 2px solid #DF2935;
 }
 
-.add-new-container .inputs .nrinput .arrow-btns button i {
+.add-new-container .inputs .nrinput button i, .remove-check .inputs .nrinput button i, .remove-popup .inputs .nrinput button i {
   font-size: 30px;
 }
 
-.add-new-container .inputs .nrinput .arrow-btns .arrow-up {
-  border-bottom: 2px solid #DF2935;
+.add-new-container .inputs .nrinput .arrow-up, .remove-check .inputs .nrinput .arrow-up, .remove-popup .inputs .nrinput .arrow-up {
+  border-left: none;
 }
 
-.add-new-container .inputs .nrinput .arrow-btns .arrow-down {
-  border-top: 2px solid #DF2935;
+.add-new-container .inputs .nrinput .arrow-down, .remove-check .inputs .nrinput .arrow-down, .remove-popup .inputs .nrinput .arrow-down {
+  border-right: none;
 }
 
-.add-new-container .inputs input[type="number"] {
+.add-new-container .inputs input[type="number"], .remove-check .inputs input[type="number"], .remove-popup .inputs input[type="number"] {
   background: none;
-  border: none;
-  height: 100px;
-  width: 150px;
+  border: 2px solid #DF2935;
+  height: 70px;
+  width: calc(100% - 140px);
   padding: 1rem 0.2rem;
   font-family: 'kdam thmor pro', sans-serif;
   color: #048BA8;
@@ -551,26 +576,29 @@ button {
   font-size: 40px;
 }
 
-.add-new-container .inputs input[type="number"] {
+.add-new-container .inputs input[type="number"], .remove-check .inputs input[type="number"], .remove-popup .inputs input[type="number"] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
 }
 
 .add-new-container .inputs input[type=number]::-webkit-inner-spin-button,
-.add-new-container .inputs input[type=number]::-webkit-outer-spin-button {
+.add-new-container .inputs input[type=number]::-webkit-outer-spin-button, .remove-check .inputs input[type=number]::-webkit-inner-spin-button,
+.remove-check .inputs input[type=number]::-webkit-outer-spin-button, .remove-popup .inputs input[type=number]::-webkit-inner-spin-button,
+.remove-popup .inputs input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
-.add-new-container .add {
-  border: none;
-  background: none;
-  height: 5rem;
-  width: 5rem;
+.add-new-container .add, .remove-check .add, .remove-popup .add {
+  height: 70px;
+  width: 70px;
+  background: #048BA8;
+  border: 2px solid #DF2935;
 }
 
-.add-new-container .add i {
+.add-new-container .add i, .remove-check .add i, .remove-popup .add i {
   font-size: 3rem;
+  color: #30292F;
 }
 
 .list-div h1 {
@@ -599,13 +627,14 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   overflow-y: scroll;
 }
 
 .list-div li {
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -616,15 +645,17 @@ button {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  border-bottom: 1px solid #30292F;
 }
 
 .list-div li .info-div {
-  height: 50px;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -633,8 +664,9 @@ button {
 }
 
 .list-div li .info-div p {
-  padding: 1rem 0;
+  padding: 0.5rem 0.5rem 0 0.5rem;
   font-family: 'kdam thmor pro', sans-serif;
+  text-align: left;
 }
 
 .list-div li .item-controls {
@@ -643,6 +675,7 @@ button {
   display: flex;
   width: 30%;
   background: none;
+  border-left: 1px solid #30292F;
 }
 
 .list-div li .item-controls button {

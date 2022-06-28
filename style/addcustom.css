@@ -1,7 +1,8 @@
-.add-new-container {
+.add-new-container, .remove-check, .remove-popup {
   opacity: 0.95;
+  height: 60%;
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 10%;
   width: 80%;
   padding: 2rem 1rem;
@@ -24,7 +25,7 @@
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-.add-new-container .close {
+.add-new-container .close, .remove-check .close, .remove-popup .close {
   position: absolute;
   top: -10px;
   right: -10px;
@@ -35,11 +36,11 @@
   height: 30px;
 }
 
-.add-new-container .close i {
+.add-new-container .close i, .remove-check .close i, .remove-popup .close i {
   font-size: 20px;
 }
 
-.add-new-container .inputs {
+.add-new-container .inputs, .remove-check .inputs, .remove-popup .inputs {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -54,24 +55,25 @@
   margin: 1rem;
 }
 
-.add-new-container .inputs label {
+.add-new-container .inputs label, .remove-check .inputs label, .remove-popup .inputs label {
   text-align: center;
   font-family: 'bebas neue', sans-serif;
 }
 
-.add-new-container .inputs input[type="text"] {
+.add-new-container .inputs input[type="text"], .remove-check .inputs input[type="text"], .remove-popup .inputs input[type="text"] {
   background: none;
-  border: none;
-  height: 100px;
+  border: 2px solid #DF2935;
+  height: 70px;
   width: 100%;
-  padding: 1rem 0.2rem;
+  padding: 0.5rem 0.2rem;
+  margin: 0.25rem 0;
   font-family: 'kdam thmor pro', sans-serif;
   color: #048BA8;
   font-weight: 200;
   font-size: 40px;
 }
 
-.add-new-container .inputs .nrinput {
+.add-new-container .inputs .nrinput, .remove-check .inputs .nrinput, .remove-popup .inputs .nrinput {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,43 +83,33 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
-.add-new-container .inputs .nrinput .arrow-btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  border: 5px solid #DF2935;
-}
-
-.add-new-container .inputs .nrinput .arrow-btns button {
-  height: 50px;
-  width: 50px;
+.add-new-container .inputs .nrinput button, .remove-check .inputs .nrinput button, .remove-popup .inputs .nrinput button {
+  height: 70px;
+  width: 70px;
   background: #048BA8;
-  border: none;
+  border: 2px solid #DF2935;
 }
 
-.add-new-container .inputs .nrinput .arrow-btns button i {
+.add-new-container .inputs .nrinput button i, .remove-check .inputs .nrinput button i, .remove-popup .inputs .nrinput button i {
   font-size: 30px;
 }
 
-.add-new-container .inputs .nrinput .arrow-btns .arrow-up {
-  border-bottom: 2px solid #DF2935;
+.add-new-container .inputs .nrinput .arrow-up, .remove-check .inputs .nrinput .arrow-up, .remove-popup .inputs .nrinput .arrow-up {
+  border-left: none;
 }
 
-.add-new-container .inputs .nrinput .arrow-btns .arrow-down {
-  border-top: 2px solid #DF2935;
+.add-new-container .inputs .nrinput .arrow-down, .remove-check .inputs .nrinput .arrow-down, .remove-popup .inputs .nrinput .arrow-down {
+  border-right: none;
 }
 
-.add-new-container .inputs input[type="number"] {
+.add-new-container .inputs input[type="number"], .remove-check .inputs input[type="number"], .remove-popup .inputs input[type="number"] {
   background: none;
-  border: none;
-  height: 100px;
-  width: 150px;
+  border: 2px solid #DF2935;
+  height: 70px;
+  width: calc(100% - 140px);
   padding: 1rem 0.2rem;
   font-family: 'kdam thmor pro', sans-serif;
   color: #048BA8;
@@ -125,25 +117,28 @@
   font-size: 40px;
 }
 
-.add-new-container .inputs input[type="number"] {
+.add-new-container .inputs input[type="number"], .remove-check .inputs input[type="number"], .remove-popup .inputs input[type="number"] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
 }
 
 .add-new-container .inputs input[type=number]::-webkit-inner-spin-button,
-.add-new-container .inputs input[type=number]::-webkit-outer-spin-button {
+.add-new-container .inputs input[type=number]::-webkit-outer-spin-button, .remove-check .inputs input[type=number]::-webkit-inner-spin-button,
+.remove-check .inputs input[type=number]::-webkit-outer-spin-button, .remove-popup .inputs input[type=number]::-webkit-inner-spin-button,
+.remove-popup .inputs input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
-.add-new-container .add {
-  border: none;
-  background: none;
-  height: 5rem;
-  width: 5rem;
+.add-new-container .add, .remove-check .add, .remove-popup .add {
+  height: 70px;
+  width: 70px;
+  background: #048BA8;
+  border: 2px solid #DF2935;
 }
 
-.add-new-container .add i {
+.add-new-container .add i, .remove-check .add i, .remove-popup .add i {
   font-size: 3rem;
+  color: #30292F;
 }
 /*# sourceMappingURL=addcustom.css.map */

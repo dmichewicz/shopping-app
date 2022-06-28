@@ -62,8 +62,8 @@
     bottom: -3px;
   }
   to {
-    height: 300px;
-    bottom: -303px;
+    height: 50vh;
+    bottom: calc(-50vh - 3px);
   }
 }
 
@@ -73,15 +73,15 @@
     bottom: -3px;
   }
   to {
-    height: 300px;
-    bottom: -303px;
+    height: 50vh;
+    bottom: calc(-50vh - 3px);
   }
 }
 
 @-webkit-keyframes categoriesCloser {
   from {
-    height: 300px;
-    bottom: -303px;
+    height: 50vh;
+    bottom: calc(-50vh - 3px);
     border-bottom: 5px;
   }
   to {
@@ -93,8 +93,8 @@
 
 @keyframes categoriesCloser {
   from {
-    height: 300px;
-    bottom: -303px;
+    height: 50vh;
+    bottom: calc(-50vh - 3px);
     border-bottom: 5px;
   }
   to {

@@ -82,7 +82,7 @@ h1, h2 {
 
 }
 
-.item, .list-item {
+.item, .list-item, .noitems {
     width: 90%;
     margin: 1rem;
     background: none;
@@ -99,8 +99,7 @@ h1, h2 {
 }
 
 .cat-btns-top {
-    margin:0 0.5rem;
-    width: 100%;
+    width: 95%;
     display: flex;
     justify-content: center;
 }
@@ -108,8 +107,8 @@ h1, h2 {
 .wszystko-btn, .wszystko-list-btn {
     font-family: 'kdam thmor pro', sans-serif; 
     font-size: 2rem;
-    padding: 0.5rem;
-    width: 80%;
+    padding: 0.5rem 2rem;
+    width: 100%;
     height: auto;
     border: 3px solid #DF2935;
     border-bottom: none;
@@ -117,6 +116,10 @@ h1, h2 {
     background: #048BA8;
     color: #30292F;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .cat-back {
@@ -132,18 +135,22 @@ h1, h2 {
     cursor: pointer;
 }
 
+
+
 .categories-chooser, .categories-chooser-list {
     position:absolute;
-    bottom: -303px;
+    bottom: calc(-50vh - 3px);
     background: #048BA8;
-    height: 300px;
-    width: 80%;
+    
+    height: 50vh;
+    width: 95%;
     border: 3px solid #DF2935;
     border-top: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
+  
 }
 
 .search-field, .search-field-list {
@@ -222,6 +229,24 @@ input {
 button {
     cursor: pointer;
 }
+
+.remove-check-btns {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .rmv-btn {
+        height: 50px;
+        width: 50px;
+        background: #048BA8;
+        border: 2px solid #DF2935;
+        i {
+            font-size: 30px;
+        }
+}
+
+}
+
 
 @import 'intro';
 
